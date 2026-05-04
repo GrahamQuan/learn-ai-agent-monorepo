@@ -15,6 +15,7 @@
     "format": "biome format --write .",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
+    "new:template": "tsx scripts/create-template-app.ts",
     "test": "turbo test",
     "test:e2e": "playwright test",
     "typecheck": "turbo typecheck"
