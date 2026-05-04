@@ -61,6 +61,50 @@ let response = await modelWithTools.invoke(messages);
 
 // 检查 response 返回值
 // console.log(response);
+/* 
+AIMessage {
+  "id": "chatcmpl-b38246ae-8cae-9413-8a62-f63626b711ff",
+  "content": "好的，请稍等，我将读取 `src/tool-file-read.ts` 文件的内容并为您解释代码。",
+  "additional_kwargs": {
+    "tool_calls": [
+      {
+        "function": "[Object]",
+        "id": "call_d48c3618b5c8440eafdc43",
+        "index": 0,
+        "type": "function"
+      }
+    ]
+  },
+  "response_metadata": {
+    "tokenUsage": {
+      "promptTokens": 343,
+      "completionTokens": 44,
+      "totalTokens": 387
+    },
+    "finish_reason": "tool_calls",
+    "model_provider": "openai",
+    "model_name": "qwen-coder-turbo"
+  },
+  "tool_calls": [
+    {
+      "name": "read_file",
+      "args": {
+        "filePath": "src/tool-file-read.ts"
+      },
+      "type": "tool_call",
+      "id": "call_d48c3618b5c8440eafdc43"
+    }
+  ],
+  "invalid_tool_calls": [],
+  "usage_metadata": {
+    "output_tokens": 44,
+    "input_tokens": 343,
+    "total_tokens": 387,
+    "input_token_details": {},
+    "output_token_details": {}
+  }
+}
+*/
 
 // 聊天记录
 messages.push(response);
