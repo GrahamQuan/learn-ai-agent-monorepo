@@ -14,6 +14,7 @@
     "dev": "turbo dev",
     "format": "biome format --write .",
     "lint": "biome check .",
+    "lint:fix": "biome check --write .",
     "test": "turbo test",
     "test:e2e": "playwright test",
     "typecheck": "turbo typecheck"
