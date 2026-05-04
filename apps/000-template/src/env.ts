@@ -1,5 +1,5 @@
-import { config } from "dotenv";
-import { ZodError, z } from "zod";
+import { config } from 'dotenv';
+import { ZodError, z } from 'zod';
 
 config();
 
@@ -15,12 +15,12 @@ try {
   EnvSchema.parse(process.env);
 } catch (error: unknown) {
   if (error instanceof ZodError) {
-    let message = "Missing required values in .env:\n";
+    let message = 'Missing required values in .env:\n';
     for (const issue of error.issues) {
       message += `${String(issue.path[0])}: ${issue.message}\n`;
     }
     const e = new Error(message);
-    e.stack = "";
+    e.stack = '';
     throw e;
   }
   console.error({ error });
