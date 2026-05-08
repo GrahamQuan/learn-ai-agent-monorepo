@@ -1,0 +1,25 @@
+{
+  "name": "002-mini-cursor",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "dev": "tsx watch src/index.ts",
+    "start": "node --import tsx src/index.ts",
+    "test": "vitest run tests",
+    "test:mini-cursor": "tsx src/mini-cursor.ts",
+    "test:node-exec": "tsx src/node-exec.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.1",
+    "@langchain/core": "^1.1.44",
+    "@langchain/openai": "^1.4.5",
+    "ai": "^6.0.174",
+    "chalk": "^5.6.2",
+    "dotenv": "^17.4.2",
+    "hono": "^4.12.16",
+    "zod": "^4.4.3"
+  }
+}

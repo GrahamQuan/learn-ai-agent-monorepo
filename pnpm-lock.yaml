@@ -15,7 +15,7 @@ importers:
         specifier: ^1.59.1
         version: 1.59.1
       '@types/node':
-        specifier: ^24.12.2
+        specifier: '24'
         version: 24.12.2
       tsx:
         specifier: ^4.21.0
@@ -44,6 +44,57 @@ importers:
       ai:
         specifier: ^6.0.174
         version: 6.0.174(zod@4.4.3)
+      dotenv:
+        specifier: ^17.4.2
+        version: 17.4.2
+      hono:
+        specifier: ^4.12.16
+        version: 4.12.16
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+
+  apps/001-tool-calling:
+    dependencies:
+      '@hono/node-server':
+        specifier: ^2.0.1
+        version: 2.0.1(hono@4.12.16)
+      '@langchain/core':
+        specifier: ^1.1.44
+        version: 1.1.44(@opentelemetry/api@1.9.0)(openai@6.35.0(zod@4.4.3))
+      '@langchain/openai':
+        specifier: ^1.4.5
+        version: 1.4.5(@langchain/core@1.1.44(@opentelemetry/api@1.9.0)(openai@6.35.0(zod@4.4.3)))
+      ai:
+        specifier: ^6.0.174
+        version: 6.0.174(zod@4.4.3)
+      dotenv:
+        specifier: ^17.4.2
+        version: 17.4.2
+      hono:
+        specifier: ^4.12.16
+        version: 4.12.16
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+
+  apps/002-mini-cursor:
+    dependencies:
+      '@hono/node-server':
+        specifier: ^2.0.1
+        version: 2.0.1(hono@4.12.16)
+      '@langchain/core':
+        specifier: ^1.1.44
+        version: 1.1.44(@opentelemetry/api@1.9.0)(openai@6.35.0(zod@4.4.3))
+      '@langchain/openai':
+        specifier: ^1.4.5
+        version: 1.4.5(@langchain/core@1.1.44(@opentelemetry/api@1.9.0)(openai@6.35.0(zod@4.4.3)))
+      ai:
+        specifier: ^6.0.174
+        version: 6.0.174(zod@4.4.3)
+      chalk:
+        specifier: ^5.6.2
+        version: 5.6.2
       dotenv:
         specifier: ^17.4.2
         version: 17.4.2
@@ -555,6 +606,10 @@ packages:
   chai@6.2.2:
     resolution: {integrity: sha512-NUPRluOfOiTKBKvWPtSD4PhFvWCqOi0BGStNWs57X9js7XGTprSmFoz5F0tWhR4WPjNeR9jXqdC7/UpSJTnlRg==}
     engines: {node: '>=18'}
+
+  chalk@5.6.2:
+    resolution: {integrity: sha512-7NzBL0rN6fMUW+f7A6Io4h40qQlG+xGmtMxfbnH/K7TAtt8JQWVQK+6g0UXKMeVJoyV5EkkNsErQ8pVD3bLHbA==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
 
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
@@ -1279,6 +1334,8 @@ snapshots:
   camelcase@6.3.0: {}
 
   chai@6.2.2: {}
+
+  chalk@5.6.2: {}
 
   convert-source-map@2.0.0: {}
 
