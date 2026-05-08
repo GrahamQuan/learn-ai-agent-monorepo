@@ -3,6 +3,7 @@ import { ChatOpenAI } from '@langchain/openai';
 import chalk from 'chalk';
 import { executeCommandTool, listDirectoryTool, readFileTool, writeFileTool } from './all-tools';
 import { env } from './env';
+import { tryCatch } from './utils/try-catch';
 
 const model = new ChatOpenAI({
   modelName: env.MODEL_NAME,
@@ -47,7 +48,13 @@ async function runAgentWithTools(query: string, maxIterations: number = 30) {
 
   for (let i = 0; i < maxIterations; i++) {
     console.log(chalk.bgGreen(`⏳ 正在等待 AI 思考...`));
-    const response = await modelWithTools.invoke(messages);
+    const [error, response] = await tryCatch(modelWithTools.invoke(messages));
+
+    if (error) {
+      console.error(`\n❌ 错误: ${error.message}\n `);
+      return error.message;
+    }
+
     messages.push(response);
 
     // 检查是否有工具调用
