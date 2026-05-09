@@ -32,11 +32,11 @@ const writeFileTool = tool(
       const dir = path.dirname(filePath);
       await fs.mkdir(dir, { recursive: true });
       await fs.writeFile(filePath, content, 'utf-8');
-      console.log(`  [工具调用] write_file("${filePath}") - 成功写入 ${content.length} 字节`);
-      return `文件写入成功: ${filePath}`;
+      console.log(`  [工具调用] write_file("${filePath}") - 成功写入 ${content.length} 字节`);
+      return `文件写入成功: ${filePath}`;
     } catch (error: any) {
-      console.log(`  [工具调用] write_file("${filePath}") - 错误: ${error.message}`);
-      return `写入文件失败: ${error.message}`;
+      console.log(`  [工具调用] write_file("${filePath}") - 错误: ${error.message}`);
+      return `写入文件失败: ${error.message}`;
     }
   },
   {
@@ -54,7 +54,7 @@ const executeCommandTool = tool(
   async ({ command, workingDirectory }) => {
     const cwd = workingDirectory || process.cwd();
     console.log(
-      `  [工具调用] execute_command("${command}")${workingDirectory ? ` - 工作目录: ${workingDirectory}` : ''}`,
+      `  [工具调用] execute_command("${command}")${workingDirectory ? ` - 工作目录: ${workingDirectory}` : ''}`,
     );
 
     return new Promise((resolve, reject) => {
@@ -75,14 +75,14 @@ const executeCommandTool = tool(
 
       child.on('close', (code) => {
         if (code === 0) {
-          console.log(`  [工具调用] execute_command("${command}") - 执行成功`);
+          console.log(`  [工具调用] execute_command("${command}") - 执行成功`);
           const cwdInfo = workingDirectory
             ? `\n\n重要提示：命令在目录 "${workingDirectory}" 中执行成功。如果需要在这个项目目录中继续执行命令，请使用 workingDirectory: "${workingDirectory}" 参数，不要使用 cd 命令。`
             : '';
-          resolve(`命令执行成功: ${command}${cwdInfo}`);
+          resolve(`命令执行成功: ${command}${cwdInfo}`);
         } else {
-          console.log(`  [工具调用] execute_command("${command}") - 执行失败，退出码: ${code}`);
-          resolve(`命令执行失败，退出码: ${code}${errorMsg ? '\n错误: ' + errorMsg : ''}`);
+          console.log(`  [工具调用] execute_command("${command}") - 执行失败，退出码: ${code}`);
+          resolve(`命令执行失败，退出码: ${code}${errorMsg ? '\n错误: ' + errorMsg : ''}`);
         }
       });
     });

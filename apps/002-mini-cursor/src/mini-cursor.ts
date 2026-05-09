@@ -22,7 +22,7 @@ const modelWithTools = model.bindTools(tools);
 // Agent 执行函数
 async function runAgentWithTools(query: string, maxIterations: number = 30) {
   const messages: BaseMessage[] = [
-    new SystemMessage(`你是一个项目管理助手，使用工具完成任务。
+    new SystemMessage(`你是一个项目管理助手，使用tools calling完成任务。
 
 当前工作目录: ${process.cwd()}
 
@@ -58,21 +58,33 @@ async function runAgentWithTools(query: string, maxIterations: number = 30) {
     messages.push(response);
 
     // 检查是否有工具调用
+    // 如果 LLM 的返回内容没有 tool_calls，则只会打印 LLM 的回复
     if (!response.tool_calls || response.tool_calls.length === 0) {
-      console.log(`\n✨ AI 最终回复:\n${response.content}\n`);
+      // console.log(`\n✨ AI 最终回复:\n${response.content}\n`);
+      console.log('🔍 AI 最终回复:\n');
+      console.dir(
+        {
+          content: response.content,
+          tool_calls: response.tool_calls,
+          additional_kwargs: response.additional_kwargs,
+        },
+        { depth: null },
+      );
+      console.log('\n');
       return response.content;
     }
+
+    console.log('🔍 Tools Calling:\n');
 
     // 执行工具调用
     for (const toolCall of response.tool_calls) {
       const foundTool = tools.find((t) => t.name === toolCall.name);
       if (foundTool) {
-        const invokeTool = foundTool.invoke as (input: unknown) => Promise<unknown>;
-        const toolResult = await invokeTool(toolCall.args);
-        const toolContent = typeof toolResult === 'string' ? toolResult : JSON.stringify(toolResult);
+        // @ts-ignore
+        const toolResult = await foundTool.invoke(toolCall.args);
         messages.push(
           new ToolMessage({
-            content: toolContent,
+            content: toolResult,
             tool_call_id: toolCall.id!,
           }),
         );
