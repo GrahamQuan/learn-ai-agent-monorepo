@@ -39,7 +39,8 @@
       "!**/build",
       "!**/components.json",
       "!**/i18n-translation-temp/**",
-      "!**/components/ui/**"
+      "!**/components/ui/**",
+      "!**/react-todo-app/**"
     ]
   },
   "linter": {

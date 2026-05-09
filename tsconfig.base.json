@@ -12,6 +12,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2024",
-    "types": ["node"]
+    "types": ["node"],
+    "exclude": ["apps/002-mini-cursor/react-todo-app"]
   }
 }
