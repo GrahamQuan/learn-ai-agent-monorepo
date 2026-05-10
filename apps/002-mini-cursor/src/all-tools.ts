@@ -4,6 +4,8 @@ import path from 'node:path';
 import { tool } from '@langchain/core/tools';
 import { z } from 'zod';
 
+const getErrorMessage = (error: unknown) => (error instanceof Error ? error.message : String(error));
+
 // 1. 读取文件工具
 const readFileTool = tool(
   async ({ filePath }) => {
@@ -11,9 +13,10 @@ const readFileTool = tool(
       const content = await fs.readFile(filePath, 'utf-8');
       console.log(`  [工具调用] read_file("${filePath}") - 成功读取 ${content.length} 字节`);
       return `文件内容:\n${content}`;
-    } catch (error: any) {
-      console.log(`  [工具调用] read_file("${filePath}") - 错误: ${error.message}`);
-      return `读取文件失败: ${error.message}`;
+    } catch (error: unknown) {
+      const message = getErrorMessage(error);
+      console.log(`  [工具调用] read_file("${filePath}") - 错误: ${message}`);
+      return `读取文件失败: ${message}`;
     }
   },
   {
@@ -34,9 +37,10 @@ const writeFileTool = tool(
       await fs.writeFile(filePath, content, 'utf-8');
       console.log(`  [工具调用] write_file("${filePath}") - 成功写入 ${content.length} 字节`);
       return `文件写入成功: ${filePath}`;
-    } catch (error: any) {
-      console.log(`  [工具调用] write_file("${filePath}") - 错误: ${error.message}`);
-      return `写入文件失败: ${error.message}`;
+    } catch (error: unknown) {
+      const message = getErrorMessage(error);
+      console.log(`  [工具调用] write_file("${filePath}") - 错误: ${message}`);
+      return `写入文件失败: ${message}`;
     }
   },
   {
@@ -104,9 +108,10 @@ const listDirectoryTool = tool(
       const files = await fs.readdir(directoryPath);
       console.log(`  [工具调用] list_directory("${directoryPath}") - 找到 ${files.length} 个项目`);
       return `目录内容:\n${files.map((f) => `- ${f}`).join('\n')}`;
-    } catch (error: any) {
-      console.log(`  [工具调用] list_directory("${directoryPath}") - 错误: ${error.message}`);
-      return `列出目录失败: ${error.message}`;
+    } catch (error: unknown) {
+      const message = getErrorMessage(error);
+      console.log(`  [工具调用] list_directory("${directoryPath}") - 错误: ${message}`);
+      return `列出目录失败: ${message}`;
     }
   },
   {

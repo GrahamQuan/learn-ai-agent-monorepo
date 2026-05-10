@@ -106,7 +106,8 @@
         "noUnsafeNegation": "error",
         "noUselessRegexBackrefs": "error",
         "noWith": "error",
-        "useGetterReturn": "error"
+        "useGetterReturn": "error",
+        "noExplicitAny": "warn"
       }
     },
     "includes": [

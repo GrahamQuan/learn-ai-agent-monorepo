@@ -120,8 +120,8 @@ const case1 = `创建一个功能丰富的 React TodoList 应用：
 2. 使用 pnpm run dev 启动服务器
 `;
 
-try {
+async function main() {
   await runAgentWithTools(case1);
-} catch (error: any) {
-  console.error(`\n❌ 错误: ${error.message}\n`);
 }
+
+main();
