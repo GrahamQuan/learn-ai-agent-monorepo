@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig.base.json",
   "files": [],
+  "exclude": ["apps/002-mini-cursor/react-todo-app"],
   "references": [
     {
       "path": "./apps/api"

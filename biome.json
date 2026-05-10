@@ -120,6 +120,7 @@
       "!**/build/**",
       "!**/components.json",
       "!**/components/ui/**",
+      "!**/react-todo-app/**",
       "!**/i18n-translation-temp/**"
     ]
   },
