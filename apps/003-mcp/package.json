@@ -1,0 +1,28 @@
+{
+  "name": "003-mcp",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "dev": "tsx watch src/index.ts",
+    "start": "node --import tsx src/index.ts",
+    "test": "vitest run tests",
+    "test:hello-langchain": "tsx src/hello-langchain.ts",
+    "add-to-cursor-mcp:mcp-demo-server": "cursor --add-mcp '{\"name\":\"mcp-demo-server\",\"command\":\"node\",\"args\":[\"--import\",\"tsx\",\"/Users/a6677/Documents/personal-projects/learn-ai-agent-monorepo/apps/003-mcp/src/mcp-demo-server.ts\"]}'",
+    "test:mcp-langchain": "tsx src/mcp-langchain.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.1",
+    "@langchain/core": "^1.1.44",
+    "@langchain/mcp-adapters": "^1.1.3",
+    "@langchain/openai": "^1.4.5",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "ai": "^6.0.174",
+    "chalk": "^5.6.2",
+    "dotenv": "^17.4.2",
+    "hono": "^4.12.16",
+    "zod": "^4.4.3"
+  }
+}
