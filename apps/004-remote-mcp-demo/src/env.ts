@@ -1,5 +1,3 @@
-import 'server-only';
-
 import { config } from 'dotenv';
 import { ZodError, z } from 'zod';
 
@@ -9,6 +7,8 @@ const EnvSchema = z.object({
   AI_SDK_KEY: z.string(),
   AI_SDK_BASE_URL: z.url(),
   MODEL_NAME: z.string(),
+  AMAP_MCP_KEY: z.string(),
+  ALLOWED_PATHS: z.string(),
   PORT: z.coerce.number().default(3000),
   HOST: z.string().default('127.0.0.1'),
 });
@@ -31,4 +31,4 @@ try {
 }
 
 export type ENV = z.infer<typeof EnvSchema>;
-export const env: ENV = EnvSchema.parse(process.env);
+export const env = EnvSchema.parse(process.env);
