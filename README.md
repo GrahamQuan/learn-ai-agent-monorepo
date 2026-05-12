@@ -6,8 +6,8 @@ The learning roadmap will be added later. This repo currently contains the base 
 
 ## Stack
 
-- Node.js 24
-- pnpm 10
+- Node.js 24.15.0
+- pnpm 10.33.0
 - Turborepo
 - TypeScript with tsx
 - Biome
@@ -21,8 +21,14 @@ The learning roadmap will be added later. This repo currently contains the base 
 ## Commands
 
 ```bash
+nvm use
 pnpm install
 pnpm dev
 pnpm check
 pnpm test:e2e
 ```
+
+This repo enforces the Node.js and pnpm versions declared in `package.json`.
+If you switch from another repo and run a pnpm command with the wrong runtime,
+pnpm will stop with an engine error instead of continuing with a mismatched
+version.
