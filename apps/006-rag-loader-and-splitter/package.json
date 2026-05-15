@@ -1,0 +1,30 @@
+{
+  "name": "006-rag-loader-and-splitter",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "dev": "tsx watch src/index.ts",
+    "start": "node --import tsx src/index.ts",
+    "test": "vitest run tests",
+    "test:hello-langchain": "tsx src/hello-langchain.ts",
+    "test:rag-demo": "tsx src/rag-demo.ts",
+    "test:loader-and-splitter-demo": "tsx src/loader-and-splitter-demo.ts",
+    "test:loader-and-splitter-with-llm": "tsx src/loader-and-splitter-with-llm.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.1",
+    "@langchain/classic": "^1.0.32",
+    "@langchain/community": "^1.1.28",
+    "@langchain/core": "^1.1.44",
+    "@langchain/openai": "^1.4.5",
+    "@langchain/textsplitters": "^1.0.1",
+    "ai": "^6.0.174",
+    "cheerio": "^1.2.0",
+    "dotenv": "^17.4.2",
+    "hono": "^4.12.16",
+    "zod": "^4.4.3"
+  }
+}
