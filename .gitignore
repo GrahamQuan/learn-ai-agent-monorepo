@@ -28,12 +28,12 @@ out/
 build
 dist
 
+# Local Docker volume data
+apps/008-milvus-demo/volumes/
+
 # Debug
 npm-debug.log*
 
 # Misc
 .DS_Store
 *.pem
-
-# i18n translation temp files
-i18n-translation-temp/
