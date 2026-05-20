@@ -1,0 +1,37 @@
+{
+  "name": "010-memory",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "dev": "tsx watch src/index.ts",
+    "start": "node --import tsx src/index.ts",
+    "test": "vitest run tests",
+    "test:hello-langchain": "tsx src/hello-langchain.ts",
+    "typecheck": "tsc --noEmit",
+    "docker-compose:up": "docker compose -f ./milvus-standalone-docker-compose.yml up -d",
+    "history:01": "tsx src/01-history-in-memory.ts",
+    "history:02": "tsx src/02-history-static-file.ts",
+    "history:03": "tsx src/03-history-static-file.ts",
+    "memory:01": "tsx src/memory/01-truncation-memory.ts",
+    "memory:02": "tsx src/memory/02-summarization-memory.ts",
+    "memory:03": "tsx src/memory/03-summarization-memory-token-base.ts",
+    "memory:04": "tsx src/memory/04-insert-conversations.ts",
+    "memory:05": "tsx src/memory/05-retrieval-memory.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.1",
+    "@langchain/community": "^1.1.28",
+    "@langchain/core": "^1.1.44",
+    "@langchain/openai": "^1.4.5",
+    "@zilliz/milvus2-sdk-node": "^3.0.0",
+    "ai": "^6.0.174",
+    "dotenv": "^17.4.2",
+    "hono": "^4.12.16",
+    "js-tiktoken": "^1.0.21",
+    "langchain": "^1.4.1",
+    "server-only": "^0.0.1",
+    "zod": "^4.4.3"
+  }
+}
