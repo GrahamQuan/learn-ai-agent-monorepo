@@ -1,0 +1,37 @@
+{
+  "name": "011-output-parser",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "dev": "tsx watch src/index.ts",
+    "start": "node --import tsx src/index.ts",
+    "test": "vitest run tests",
+    "test:hello-langchain": "tsx src/hello-langchain.ts",
+    "typecheck": "tsc --noEmit",
+    "run:01": "tsx src/01-normal.ts",
+    "run:02": "tsx src/02-json-output-parser.ts",
+    "run:03": "tsx src/03-structured-output-parser.ts",
+    "run:04": "tsx src/04-structured-output-parser-zod.ts",
+    "run:05": "tsx src/05-tool-call-args.ts",
+    "run:06": "tsx src/06-with-structured-output.ts",
+    "run:07": "tsx src/07-stream-normal.ts",
+    "run:08": "tsx src/08-stream-with-structured-output.ts",
+    "run:09": "tsx src/09-stream-structured-partial.ts",
+    "run:10": "tsx src/10-stream-tool-calls-raw.ts",
+    "run:11": "tsx src/11-stream-tool-calls-parser.ts",
+    "run:12": "tsx src/12-xml-output-parser.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.1",
+    "@langchain/core": "^1.1.44",
+    "@langchain/openai": "^1.4.5",
+    "ai": "^6.0.174",
+    "chalk": "^5.6.2",
+    "dotenv": "^17.4.2",
+    "hono": "^4.12.16",
+    "server-only": "^0.0.1",
+    "zod": "^4.4.3"
+  }
+}
