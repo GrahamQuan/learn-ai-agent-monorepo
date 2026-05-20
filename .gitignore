@@ -30,6 +30,7 @@ dist
 
 # Local Docker volume data
 apps/008-milvus-demo/volumes/
+apps/009-milvus-rag-practice/volumes/
 
 # Debug
 npm-debug.log*

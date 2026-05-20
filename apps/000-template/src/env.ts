@@ -7,6 +7,7 @@ const EnvSchema = z.object({
   AI_SDK_KEY: z.string(),
   AI_SDK_BASE_URL: z.url(),
   MODEL_NAME: z.string(),
+  EMBEDDINGS_MODEL_NAME: z.string(),
   PORT: z.coerce.number().default(3000),
   HOST: z.string().default('127.0.0.1'),
 });
