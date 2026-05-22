@@ -1,0 +1,31 @@
+{
+  "name": "012-template",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "dev": "tsx watch src/index.ts",
+    "start": "node --import tsx src/index.ts",
+    "test": "vitest run tests",
+    "test:hello-langchain": "tsx src/hello-langchain.ts",
+    "docker-compose:up": "docker compose -f ./milvus-standalone-docker-compose.yml up -d",
+    "typecheck": "tsc --noEmit",
+    "run:01:01": "tsx src/01-info-enter-intelligently/01-create-table.ts",
+    "run:01:02": "tsx src/01-info-enter-intelligently/02-smart-import.ts",
+    "run:01:03": "tsx src/01-info-enter-intelligently/03-structured-json-schema.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.1",
+    "@langchain/core": "^1.1.44",
+    "@langchain/openai": "^1.4.5",
+    "@neondatabase/serverless": "^1.1.0",
+    "@zilliz/milvus2-sdk-node": "^3.0.0",
+    "ai": "^6.0.174",
+    "chalk": "^5.6.2",
+    "dotenv": "^17.4.2",
+    "hono": "^4.12.16",
+    "server-only": "^0.0.1",
+    "zod": "^4.4.3"
+  }
+}

@@ -28,7 +28,6 @@
     "@langchain/core": "^1.1.44",
     "@langchain/openai": "^1.4.5",
     "ai": "^6.0.174",
-    "chalk": "^5.6.2",
     "dotenv": "^17.4.2",
     "hono": "^4.12.16",
     "server-only": "^0.0.1",
