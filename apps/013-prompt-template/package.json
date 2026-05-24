@@ -1,0 +1,40 @@
+{
+  "name": "013-prompt-template",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "dev": "tsx watch src/index.ts",
+    "start": "node --import tsx src/index.ts",
+    "test": "vitest run tests",
+    "test:hello-langchain": "tsx src/hello-langchain.ts",
+    "docker-compose:up": "docker compose -f ./milvus-standalone-docker-compose.yml up -d",
+    "typecheck": "tsc --noEmit",
+    "run:01": "tsx src/01-prompt-template.ts",
+    "run:02": "tsx src/02-pipeline-prompt-template.ts",
+    "run:03": "tsx src/03-pipeline-prompt-template2.ts",
+    "run:04": "tsx src/04-partial.ts",
+    "run:05": "tsx src/05-chat-prompt-template.ts",
+    "run:06": "tsx src/06-pipeline-prompt-template3.ts",
+    "run:07": "tsx src/07-chat-prompt-template2.ts",
+    "run:08": "tsx src/08-messages-placeholder.ts",
+    "run:09": "tsx src/09-fewshot-prompt-template.ts",
+    "run:10": "tsx src/10-example-selector1.ts",
+    "run:11": "tsx src/11-weekly-report-examples-writer-milvus.ts",
+    "run:12": "tsx src/12-example-selector2.ts",
+    "run:13": "tsx src/13-fewshot-chat-prompt-template.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.1",
+    "@langchain/community": "^1.1.28",
+    "@langchain/core": "^1.1.44",
+    "@langchain/openai": "^1.4.5",
+    "@zilliz/milvus2-sdk-node": "^3.0.0",
+    "ai": "^6.0.174",
+    "dotenv": "^17.4.2",
+    "hono": "^4.12.16",
+    "server-only": "^0.0.1",
+    "zod": "^4.4.3"
+  }
+}

@@ -1,7 +1,10 @@
 {
   "extends": "./tsconfig.base.json",
   "files": [],
-  "exclude": ["apps/002-mini-cursor/react-todo-app"],
+  "exclude": [
+    "apps/002-mini-cursor/react-todo-app",
+    "apps/012-output-parser-practice-two-cases/react-todo-app/tsconfig.json"
+  ],
   "references": [
     {
       "path": "./apps/api"
