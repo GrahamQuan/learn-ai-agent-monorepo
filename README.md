@@ -17,6 +17,8 @@ The learning roadmap will be added later. This repo currently contains the base 
 - AI SDK
 - LangChain
 - LangGraph
+- Postgres Database
+- Milvus (vector database)
 
 ## Commands
 

@@ -31,6 +31,7 @@
     "dotenv": "^17.4.2",
     "hono": "^4.12.16",
     "server-only": "^0.0.1",
+    "tools": "link:@langchain/core/tools",
     "zod": "^4.4.3"
   }
 }

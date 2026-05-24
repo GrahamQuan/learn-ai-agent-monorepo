@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "run:01:01": "tsx src/01-info-enter-intelligently/01-create-table.ts",
     "run:01:02": "tsx src/01-info-enter-intelligently/02-smart-import.ts",
-    "run:01:03": "tsx src/01-info-enter-intelligently/03-structured-json-schema.ts"
+    "run:01:03": "tsx src/01-info-enter-intelligently/03-structured-json-schema.ts",
+    "run:02:01": "tsx src/02-stream-mini-cursor/01-stream-mini-cursor.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.0.1",

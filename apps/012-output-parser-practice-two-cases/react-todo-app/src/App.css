@@ -1,0 +1,229 @@
+/* App-level styles with animations & polish */
+
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.header p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
+}
+
+.input-group button {
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.input-group button:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.45);
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+.stats {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  background: white;
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.todo-item.removing {
+  animation: fadeOutDown 0.35s ease-in forwards;
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 1.05rem;
+  color: #333;
+  word-break: break-word;
+  padding: 0.25rem 0;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.todo-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.todo-actions button.edit {
+  color: #4f46e5;
+}
+
+.todo-actions button.delete {
+  color: #ef4444;
+}
+
+.todo-actions button:hover {
+  transform: scale(1.15);
+  background: rgba(0,0,0,0.05);
+}
+
+.empty-state {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2rem 1rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 1.5rem 0.75rem;
+  }
+  .header h1 {
+    font-size: 2rem;
+  }
+  .input-group {
+    flex-direction: column;
+  }
+  .filters {
+    flex-wrap: wrap;
+  }
+}
