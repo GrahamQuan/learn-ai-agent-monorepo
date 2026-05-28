@@ -1,0 +1,4 @@
+interface:
+  display_name: "Add TypeScript to Files"
+  short_description: "Add missing TypeScript annotations"
+  default_prompt: "Use $add-typescript-to-files to add TypeScript annotations to the provided file paths without changing logic."
