@@ -24,7 +24,7 @@ const examplePrompt = PromptTemplate.fromTemplate(
 );
 
 // 3. 构造一批「长度差异明显」的示例，方便观察选择效果
-const examples = [
+const examples: { user_requirement: string; report_snippet: string }[] = [
   {
     user_requirement: '本周主要在做基础设施稳定性治理，想突出风险控制。',
     report_snippet:
@@ -79,11 +79,13 @@ const currentRequirement =
   '也有新功能上线（接入知识库、日志检索）。希望周报既能体现「把坑都兜住了」，' +
   '又能展示一部分业务侧能感知到的亮点。';
 
-const _finalPrompt = await fewShotPrompt.format({
+const finalPrompt = await fewShotPrompt.format({
   current_requirement: currentRequirement,
 });
 
-// console.log(finalPrompt);
+console.log(finalPrompt);
+
+console.log('\n===== 分割线 =====\n');
 
 const finalPrompt2 = await fewShotPrompt.format({
   current_requirement: '',
