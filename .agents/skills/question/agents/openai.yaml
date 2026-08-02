@@ -1,0 +1,7 @@
+interface:
+  display_name: 'Question'
+  short_description: '只讨论和解释，不修改文件，并使用中英关键词格式与ASCII图示'
+  default_prompt: 'Use $question to discuss this topic without modifying any files.'
+
+policy:
+  allow_implicit_invocation: false
