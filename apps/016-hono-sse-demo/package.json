@@ -1,5 +1,5 @@
 {
-  "name": "016-template",
+  "name": "016-hono-sse-demo",
   "version": "0.0.1",
   "private": true,
   "type": "module",
