@@ -20,7 +20,14 @@
     "run:runnable:05": "tsx src/runnables/05-RunnablePassthrough.ts",
     "run:runnable:06": "tsx src/runnables/06-RunnableEach.ts",
     "run:runnable:07": "tsx src/runnables/07-RunnablePick.ts",
-    "run:runnable:08": "tsx src/runnables/08-RunnableWithMessageHistory.ts"
+    "run:runnable:08": "tsx src/runnables/08-RunnableWithMessageHistory.ts",
+    "===============": "========================================================",
+    "run:runnable:09": "tsx src/runnables/09-unstable-RunnableWithCallbacks.ts",
+    "run:runnable:10": "tsx src/runnables/10-unstable-RunnableWithConfig.ts",
+    "run:runnable:11": "tsx src/runnables/11-unstable-RunnableWithRetry.ts",
+    "run:runnable:12": "tsx src/runnables/12-unstable-RunnableWithCallbacks.ts",
+    "run:runnable:13": "tsx src/runnables/13-unstable-RunnableWithFallbacks.ts",
+    "run:runnable:14": "tsx src/runnables/14-unstable-RunnableWithConfig.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.0.1",
