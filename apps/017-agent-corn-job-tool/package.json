@@ -1,0 +1,34 @@
+{
+  "name": "017-agent-corn-job-tool",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "dev": "tsx watch src/main.ts",
+    "start": "node --import tsx src/main.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "db:push": "drizzle-kit push",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.1",
+    "@langchain/core": "^1.1.44",
+    "@langchain/openai": "^1.4.5",
+    "cron": "^4.4.0",
+    "dotenv": "^17.4.2",
+    "drizzle-orm": "^0.45.2",
+    "hono": "^4.12.16",
+    "nodemailer": "^8.0.2",
+    "pg": "^8.22.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^7.0.11",
+    "@types/pg": "^8.20.0",
+    "drizzle-kit": "^0.31.10"
+  }
+}
