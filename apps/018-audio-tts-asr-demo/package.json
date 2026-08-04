@@ -1,0 +1,33 @@
+{
+  "name": "018-template",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "dev": "tsx watch src/index.ts",
+    "start": "node --import tsx src/index.ts",
+    "test": "vitest run tests",
+    "typecheck": "tsc --noEmit",
+    "run:00": "tsx src/00-tts-test.ts",
+    "run:01": "tsx src/01-streaming-tts-test.ts",
+    "run:02": "tsx src/02-asr-test.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.1",
+    "@langchain/core": "^1.1.44",
+    "@langchain/openai": "^1.4.5",
+    "@zilliz/milvus2-sdk-node": "^3.0.0",
+    "ai": "^6.0.174",
+    "dotenv": "^17.4.2",
+    "hono": "^4.12.16",
+    "server-only": "^0.0.1",
+    "tencentcloud-sdk-nodejs": "^4.1.201",
+    "tencentcloud-sdk-nodejs-tts": "^4.1.182",
+    "ws": "^8.20.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1"
+  }
+}
