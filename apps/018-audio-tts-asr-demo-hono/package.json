@@ -1,0 +1,27 @@
+{
+  "name": "018-audio-tts-asr-demo-hono",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "dev": "tsx watch src/main.ts",
+    "start": "node --import tsx src/main.ts",
+    "test": "vitest run",
+    "test:e2e": "vitest run test/app.e2e-spec.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.1",
+    "@langchain/core": "^1.1.44",
+    "@langchain/openai": "^1.4.5",
+    "dotenv": "^17.4.2",
+    "hono": "^4.12.16",
+    "tencentcloud-sdk-nodejs": "^4.1.201",
+    "ws": "^8.20.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1"
+  }
+}
