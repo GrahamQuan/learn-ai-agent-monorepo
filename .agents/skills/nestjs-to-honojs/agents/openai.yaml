@@ -1,0 +1,4 @@
+interface:
+  display_name: "NestJS to HonoJS"
+  short_description: "Migrate NestJS conservatively to Hono and Drizzle"
+  default_prompt: "Use $nestjs-to-honojs to migrate this NestJS project to Hono with PostgreSQL and Drizzle while preserving its original structure."
