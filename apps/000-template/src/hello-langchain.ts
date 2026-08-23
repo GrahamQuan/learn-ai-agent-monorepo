@@ -1,4 +1,4 @@
-import { model } from './constants/model';
+import { model } from './ai-models/model';
 
 const response = await model.invoke(`
   Introduce yourself.

@@ -1,5 +1,5 @@
 import { ChatOpenAI, OpenAIEmbeddings } from '@langchain/openai';
-import { env } from './env';
+import { env } from '../config/env';
 
 export const VECTOR_DIM = 1024;
 
