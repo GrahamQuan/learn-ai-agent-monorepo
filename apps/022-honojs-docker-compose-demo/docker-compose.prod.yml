@@ -1,0 +1,37 @@
+services:
+  postgres-prod:
+    image: postgres:17-alpine
+    container_name: postgres-prod
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: book
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-prod-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d book"]
+      interval: 2s
+      timeout: 5s
+      retries: 15
+    restart: always
+
+  hono-app:
+    container_name: hono-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      DATABASE_URL: postgresql://postgres:admin@postgres-prod:5432/book
+    depends_on:
+      postgres-prod:
+        condition: service_healthy
+    restart: always
+
+volumes:
+  postgres-prod-data:
