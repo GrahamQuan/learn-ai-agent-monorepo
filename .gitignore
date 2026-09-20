@@ -33,6 +33,7 @@ apps/008-milvus-demo/volumes/
 apps/009-milvus-rag-practice/volumes/
 apps/010-memory/volumes/
 apps/013-prompt-template/volumes/
+apps/024-neo4j-graphrag/volumes/
 
 # Debug
 npm-debug.log*
