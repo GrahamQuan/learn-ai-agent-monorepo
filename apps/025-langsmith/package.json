@@ -1,0 +1,32 @@
+{
+  "name": "025-langsmith",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "LangGraph RAG with Milvus and LangSmith evaluation",
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json --noEmit",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit",
+    "trigger_error": "tsx src/trigger_error.ts",
+    "insert": "tsx src/milvus_insert.ts",
+    "ask": "tsx src/cli.ts",
+    "env:check": "tsx src/env.ts",
+    "rag_agent": "tsx src/rag_agent.ts",
+    "eval:dataset": "tsx src/eval/build_dataset.ts",
+    "eval:run": "tsx src/eval/run_eval.ts",
+    "docker-compose:up": "docker compose -f ./docker-compose.yml up -d",
+    "docker-compose:down": "docker compose -f ./docker-compose.yml down"
+  },
+  "dependencies": {
+    "@langchain/community": "^1.1.28",
+    "@langchain/core": "^1.2.12",
+    "@langchain/langgraph": "^1.4.12",
+    "@langchain/openai": "^1.5.13",
+    "@langchain/textsplitters": "^1.0.1",
+    "@zilliz/milvus2-sdk-node": "^2.5.5",
+    "dotenv": "^16.4.7",
+    "langsmith": "^0.6.0",
+    "openevals": "^0.2.0",
+    "zod": "^4.4.2"
+  }
+}
