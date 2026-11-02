@@ -27,7 +27,17 @@ Add the smallest useful TypeScript annotations to the requested files so they ty
    - safe casts or non-null assertions that express an existing invariant
    - object index types such as `Record<string, string>` when needed
 5. Re-run typecheck or a targeted compiler command after editing.
-6. Final response: name changed files, state that logic was preserved, and report the verification command.
+6. As the final implementation step, if the source project contains an environment-variable example file, apply **Unified Env Entry** below, then re-run typecheck. Otherwise skip this step.
+7. Final response: name changed files, state that business logic was preserved, describe any env consolidation and validation changes, and report the verification command.
+
+## Unified Env Entry
+
+- Detect source example files with `rg --files --hidden`, including `.env.example`, `.env.sample`, `.env.template`, `env.example`, and typo variants such as `env.exmaple` or `.env.exmaple`. Do not create an env module when no such file exists.
+- Read the example and the target project's environment-variable usages. Reuse its existing env entry if present; otherwise create `src/env.ts`, following the repository's convention. In this repo, use `apps/001-tool-calling/src/env.ts` as the reference for dotenv loading, Zod schema validation, readable errors, and exported `env` / inferred `ENV` type.
+- Centralize dotenv loading, environment-variable reads, defaults, and validation in that entry. Update the target project's consumers to import `env`; remove redundant `dotenv/config` imports and scattered `process.env` reads. Preserve variable names and existing defaults, and keep optional settings optional. Do not require credentials for services that an entrypoint does not use.
+- Preserve SDKs' automatic environment-variable behavior, including LangSmith tracing. Schema defaults alone do not update `process.env`; ensure any default consumed directly by an SDK remains consistent with the exported config.
+- Add a direct validation-library dependency and update the lockfile only when needed. Keep the example file consistent without copying real secrets into it or modifying the user's `.env`.
+- This conditional step is a narrow exception to the type-only, no-refactoring, and no-new-named-types rules: permit the env module, its inferred `ENV` type, validation, and necessary consumer/configuration edits. Preserve business logic and limit changes to the target project and required lockfile updates.
 
 ## Rules
 

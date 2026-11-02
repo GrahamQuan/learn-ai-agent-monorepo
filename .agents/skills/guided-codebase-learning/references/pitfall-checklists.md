@@ -86,7 +86,7 @@ production hardening from every learning project.
 ## README Accuracy
 
 - Does the documented startup model match the actual entrypoints?
-- Do Mermaid edges match orchestration code?
+- Do diagram edges match orchestration code?
 - Are synchronous and asynchronous steps distinguished?
 - Are environment variables current and correctly classified?
 - Do test commands exist and demonstrate the stated scenarios?

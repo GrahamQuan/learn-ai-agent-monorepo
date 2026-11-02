@@ -1,0 +1,30 @@
+{
+  "name": "026-deep-agents",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "middleware": "tsx src/middleware-test.ts",
+    "middleware:tools": "tsx src/middleware-test2.ts",
+    "filesystem": "tsx src/deepagents/filesystem-agent.ts",
+    "memory": "tsx src/deepagents/memory-agent.ts",
+    "skills": "tsx src/deepagents/skills-agent.ts",
+    "subagent": "tsx src/deepagents/subagent-agent.ts",
+    "summarization": "tsx src/deepagents/summarization-agent.ts"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.2.11",
+    "@langchain/langgraph": "^1.3.2",
+    "@langchain/openai": "^1.4.7",
+    "deepagents": "^1.10.2",
+    "dotenv": "^17.4.2",
+    "langchain": "^1.4.2",
+    "langsmith": "^0.9.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "agent-browser": "^0.27.0"
+  }
+}

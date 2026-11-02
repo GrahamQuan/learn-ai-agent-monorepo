@@ -3,11 +3,12 @@
 Use this reference to turn architecture paths and invariants into observable,
 repeatable learning demonstrations.
 
-During Round 1 of the parent skill, use this reference only to design and
-classify proposed scenarios. Do not create test files, install dependencies,
-start infrastructure, or run stateful demonstrations. During Round 2, create
-and run only the scenarios and environment actions included in the learner's
-confirmed preview.
+During read-only teaching, use this reference to inspect, explain, design, and
+classify scenarios without implying permission to create test files, install
+dependencies, start infrastructure, or run stateful demonstrations. When the
+learner explicitly requests persistent learning artifacts, follow
+[learning-artifacts.md](learning-artifacts.md) and create or run only the
+scenarios and environment actions in the confirmed preview.
 
 ## Choose the Honest Test Level
 
