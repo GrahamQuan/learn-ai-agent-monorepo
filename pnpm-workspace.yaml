@@ -2,3 +2,12 @@ packages:
   - "apps/*"
   - "packages/*"
 
+# QuickJS 0.4.0 imports these packages at runtime but only declares them as devDependencies.
+packageExtensions:
+  "@langchain/quickjs@0.4.0":
+    peerDependencies:
+      "@langchain/core": "^1.1.42"
+      "@langchain/langgraph": "^1.2.9"
+      "langchain": "^1.3.1"
+      "zod": "^4.3.6"
+
