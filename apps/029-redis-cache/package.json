@@ -1,0 +1,21 @@
+{
+  "name": "029-redis-cache",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "redis:test": "tsx src/redis-test.ts",
+    "agent:redis-memory": "tsx src/agent-with-redis-memory.ts"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.1.48",
+    "@langchain/openai": "^1.4.7",
+    "deepagents": "^1.10.2",
+    "dotenv": "^17.4.2",
+    "ioredis": "^5.11.0",
+    "langchain": "^1.4.2",
+    "zod": "^4.4.3"
+  }
+}
