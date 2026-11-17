@@ -5,7 +5,7 @@
 
 ## 运行
 
-使用仓库要求的 Node.js 24.15.0 和 pnpm 10.33.0。在本目录将 `.env.example`
+使用仓库要求的 Node.js 24.22.1 和 pnpm 10.33.0。在本目录将 `.env.example`
 复制为 `.env` 并填写 API Key，然后在仓库根目录执行：
 
 ```sh

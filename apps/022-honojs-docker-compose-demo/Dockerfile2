@@ -1,5 +1,5 @@
 # 指定基础镜像（必须第一行）
-FROM node:24.15-alpine
+FROM node:24.22.1-alpine
 
 # 设置容器内工作目录
 WORKDIR /app
