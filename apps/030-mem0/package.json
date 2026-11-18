@@ -1,0 +1,38 @@
+{
+  "name": "030-mem0",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "mem0:setup": "tsx scripts/mem0-setup.ts",
+    "mem0:docker:up": "tsx scripts/mem0-docker-compose-up.ts",
+    "mem0:docker:down": "tsx scripts/mem0-docker-compose-down.ts",
+    "start": "tsx src/mem0-test.ts",
+    "cleanup": "tsx src/mem0-test.ts --cleanup",
+    "redis:docker:up": "docker compose -f docker-compose.yml up -d",
+    "redis:docker:down": "docker compose -f docker-compose.yml down",
+    "redis:agent": "tsx src/mem0-redis-mem0-agent.ts",
+    "scoped-memory:add": "tsx src/mem0-scoped-memory-test.ts add",
+    "scoped-memory:search": "tsx src/mem0-scoped-memory-test.ts search",
+    "scoped-memory:cleanup": "tsx src/mem0-scoped-memory-test.ts --cleanup",
+    "local-api": "tsx src/mem0-local-api-demo.ts",
+    "local-api:search": "tsx src/mem0-local-api-demo.ts search",
+    "local-api:list": "tsx src/mem0-local-api-demo.ts list",
+    "local-api:cleanup": "tsx src/mem0-local-api-demo.ts --cleanup",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@langchain/core": "^1.1.48",
+    "@langchain/openai": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "ioredis": "^5.11.1",
+    "langchain": "^1.4.4",
+    "mem0ai": "^3.0.6",
+    "zod": "^4.4.3"
+  },
+  "private": true
+}
