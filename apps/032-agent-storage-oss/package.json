@@ -1,0 +1,23 @@
+{
+  "name": "032-agent-storage-oss",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "oss": "tsx src/oss-upload.ts",
+    "minio": "tsx src/minio-upload.ts",
+    "s3": "tsx src/s3-upload.ts",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1076.0",
+    "ali-oss": "^6.23.0",
+    "dotenv": "^17.4.2",
+    "minio": "^8.0.7",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/ali-oss": "^6.23.3"
+  }
+}
