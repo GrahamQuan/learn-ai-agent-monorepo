@@ -1,0 +1,30 @@
+{
+  "name": "033-agent-multi-model",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "open:public": "tsx scripts/open-public.ts",
+    "image-understanding": "tsx src/image-understanding.ts",
+    "audio-understanding": "tsx src/audio-understanding.ts",
+    "video-understanding": "tsx src/video-understanding.ts",
+    "sts-gen": "tsx src/sts-gen.ts",
+    "text-to-image": "tsx src/wan/text-to-image.ts",
+    "image-edit": "tsx src/wan/image-edit.ts",
+    "text-to-video": "tsx src/wan/text-to-video.ts",
+    "image-to-video": "tsx src/wan/image-to-video.ts",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.2.1",
+    "@langchain/openai": "^1.5.3",
+    "ali-oss": "^6.23.0",
+    "dashscope-sdk-official": "^1.25.4",
+    "dotenv": "^17.4.2",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/ali-oss": "^6.23.3"
+  }
+}
