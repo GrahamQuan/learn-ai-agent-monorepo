@@ -35,6 +35,7 @@ apps/010-memory/volumes/
 apps/013-prompt-template/volumes/
 apps/024-neo4j-graphrag/volumes/
 apps/030-mem0/volumes/
+apps/034-rabbitmq/rabbitmq_data/
 
 # Debug
 npm-debug.log*

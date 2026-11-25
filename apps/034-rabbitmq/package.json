@@ -1,0 +1,25 @@
+{
+  "name": "034-rabbitmq",
+  "version": "1.0.0",
+  "scripts": {
+    "docker-compose:up": "docker compose -f ./docker-compose.yml up -d",
+    "docker-compose:down": "docker compose -f ./docker-compose.yml down",
+    "direct:consumer": "tsx src/01-direct/consumer.ts",
+    "direct:producer": "tsx src/01-direct/producer.ts",
+    "fanout:consumer:vector": "tsx src/02-fanout/consumer-vector.ts",
+    "fanout:consumer:es": "tsx src/02-fanout/consumer-es.ts",
+    "fanout:producer": "tsx src/02-fanout/producer.ts",
+    "topic:consumer": "tsx src/03-topic/consumer.ts",
+    "topic:producer": "tsx src/03-topic/producer.ts",
+    "headers:consumer": "tsx src/04-headers/consumer.ts",
+    "headers:producer": "tsx src/04-headers/producer.ts",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^2.0.1"
+  },
+  "type": "module",
+  "private": true
+}
