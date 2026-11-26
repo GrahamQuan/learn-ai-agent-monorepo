@@ -6,7 +6,7 @@ The learning roadmap will be added later. This repo currently contains the base 
 
 ## Stack
 
-- Node.js 24.15.0
+- Node.js 24.22.3
 - pnpm 10.33.0
 - Turborepo
 - TypeScript with tsx
