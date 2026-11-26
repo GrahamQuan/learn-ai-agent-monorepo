@@ -1,0 +1,35 @@
+{
+  "name": "035-langfuse",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Deep Agents + Langfuse tracing demo (Node.js)",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "docker-compose:up": "docker compose -f ./docker-compose.yml up -d",
+    "docker-compose:down": "docker compose -f ./docker-compose.yml down",
+    "docker-compose:download-file": "curl -o docker-compose.yml https://raw.githubusercontent.com/langfuse/langfuse/main/docker-compose.yml",
+    "demo": "tsx src/index.ts",
+    "start": "tsx src/index.ts",
+    "eval": "tsx src/evaluate.ts",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": ["langfuse", "deepagents", "langchain", "tracing"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@langchain/core": "^1.2.3",
+    "@langchain/langgraph": "^1.4.8",
+    "@langchain/openai": "^1.5.5",
+    "@langfuse/client": "^5.9.1",
+    "@langfuse/core": "^5.9.1",
+    "@langfuse/langchain": "^5.9.1",
+    "@langfuse/otel": "^5.9.1",
+    "@opentelemetry/sdk-node": "^0.221.0",
+    "deepagents": "^1.11.1",
+    "dotenv": "^17.4.2",
+    "langchain": "^1.5.4",
+    "zod": "^4.4.3"
+  }
+}
